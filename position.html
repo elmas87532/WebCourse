@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Position</title>
+	<link rel="stylesheet" type="text/css" href="hw1.css">
+</head>
+<body>
+	<div id="wrapper">
+		<div id="index">
+			<h2>CSS位置</h2>
+		</div>
+		<div id="maincontent">
+			<p style="font-weight: bold;"><a href="http://www.1keydata.com/css-tutorial/tw/" >CSS教學</a> ＞ 位置</p>
+			<br/>
+			<p>在 CSS 中常見的位置 (position) 屬性有以下幾種：</p>
+			<p>
+				<li><a href="#position">position</a></li>
+				<li><a href="#trlb">top</a></li>
+				<li><a href="#trlb">right</a></li>
+				<li><a href="#trlb">left</a></li>
+				<li><a href="#trlb">bottom</a></li>
+				<li><a href="#overflow">overflow</a></li>
+				<li><a href="#z-index">z-index</a></li>
+			</p>
+			<h2 id="position">position</h2>
+			<p>position 屬性制定出要用哪一類的位置。可能的值有：</p>
+			<p>
+				<li>static (預設值): 這代表元素會被放在預設的地方。如果 position 的值是被設定為 statics 的話，那 top、bottom、left、和 right 的值就都沒有意義了。</li>
+				<li>absolute: 這代表元素會被放在瀏覽器內的某個位置 (依 top、bottom、left、和 right 的值而定)。當使用者將網頁往下拉時，元素也會跟著改變位置。</li>
+				<li>relative: 這代表元素被放的地方將會與預設的地方有所不同。不同的程度是依照 top、bottom、left、和 right 的值而定。</li>
+				<li>fixed: 這代表元素會被放在瀏覽器內的某個位置 (依 top、bottom、left、和 right 的值而定)。當使用者將網頁往下拉時，元素的位置不會改變。</li>
+			</p>
+			<h2 id="trlb">top,right,bottom,left</h2>
+			<p>每一個方向 (top, right, bottom, left) 的位置值可以是長度、百分比、或是 auto。</p>
+			<p>讓我們來看個例子：</p>
+			<p>CSS 碼：</p>
+			<p style="background-color: #E6E6E6;">
+				div { <br/>
+				&nbsp;&nbsp;background-color:#FF00FF; <br/>
+				&nbsp;&nbsp;width:500px; <br/>
+				&nbsp;&nbsp;height:60px; <br/>
+				}<br/><br/>
+				p { <br/>
+				&nbsp;&nbsp;position:relative; <br/>
+				&nbsp;&nbsp;top:10px; <br/>
+				&nbsp;&nbsp;left:50px; <br/>
+				}
+			</p>
+			<p>在這哩，以下的 HTML 碼，</p>
+			<p>
+				&lt;div&gt; <br/>
+				&lt;p&gt;舉例文字。 <br/>
+				&lt;/div&gt;
+			</p>
+			<p>會顯示出，</p>
+			<p style="background-color: #CC33CC;">
+				<div class="div1"> 
+				<p class="p1">舉例文字。 
+				</div>
+			</p>
+			<p>請注意以上文字的位置：它是在離粉紅色方塊上面 10px，及左邊 50px 的地方。</p>
+
+			<h2 id="overflow">overflow</h2>
+			<p>overflow 屬性是用來設定當內容放不下時的處理方式。可能的值包括：
+			<li>visible: 內容完全呈現，不管放得下放不下。</li>
+			<li>hidden: 放不下的內容就不顯示出來。</li>
+			<li>scroll: 無論內容放得下放不下，都加入上下捲軸及左右捲軸的功能。</li>
+			<li>auto: 當內容放不下時，加上捲軸的功能。</li></p>
+		<p>
+			<p align="center"><b>auto</b></p>
+			<div style="text-align: left;width: 200px;height: 70px;border: 1px solid #999; overflow: auto; margin: 0 auto;">
+				我們用這一區來看不同的 overflow 值展現出來會有什麼不一樣。
+				<p>這裡展現的值是 auto。</p>
+			</div>
+			<p align="center"><b>hidden</b></p>
+			<div style="text-align: left;width: 200px;height: 70px;border: 1px solid #999; overflow: hidden; margin: 0 auto;">
+				我們用這一區來看不同的 overflow 值展現出來會有什麼不一樣。
+				<p>這裡展現的值是 hidden。</p>
+			</div>
+			<p align="center"><b>visible</b></p>
+			<div style="text-align: left;width: 200px;height: 70px;border: 1px solid #999; overflow: visible; margin: 0 auto;">
+				我們用這一區來看不同的 overflow 值展現出來會有什麼不一樣。
+				<p>這裡展現的值是 visible。</p>
+			</div><br/>
+			<p align="center"><b>scroll</b></p>
+			<div style="text-align: left;width: 200px;height: 70px;border: 1px solid #999; overflow: scroll; margin: 0 auto;">
+				我們用這一區來看不同的 overflow 值展現出來會有什麼不一樣。
+				<p>這裡展現的值是 scroll。</p>
+			</div>
+		</p>
+
+		<h2 id="z-index">z-index</h2>
+		<p>z-index 屬性是用來決定元素重疊的順序。換言之，當兩個元素有重疊的情況時，z-index 值將會決定哪一個元素在上面。z-index 值比較大個元素會被放在上面。</p>
+		<p>舉例來說，假設我們有以下的 CSS 碼：</p>
+		<p style="background-color: #E6E6E6;">
+			#redblock { <br/>
+			&nbsp;&nbsp;z-index: 1; <br/>
+			&nbsp;&nbsp;position: <br/>
+			&nbsp;&nbsp;absolute; <br/>
+			&nbsp;&nbsp;width:80px; <br/>
+			&nbsp;&nbsp;height:100px; <br/>
+			&nbsp;&nbsp;top:20px; <br/>
+			&nbsp;&nbsp;left:20px; <br/>
+			&nbsp;&nbsp;border: 1px solid #FFF; <br/>
+			&nbsp;&nbsp;background-color: #FF0000; <br/>
+			} <br/><br/>
+			#pinkblock { <br/>
+			&nbsp;&nbsp;z-index: 2; <br/>
+			&nbsp;&nbsp;position: absolute; <br/>
+			&nbsp;&nbsp;width:100px; <br/>
+			&nbsp;&nbsp;height:80px; <br/>
+			&nbsp;&nbsp;top:50px; <br/>
+			&nbsp;&nbsp;left:50px; <br/>
+			&nbsp;&nbsp;border: 1px solid #FFF; <br/>
+			&nbsp;&nbsp;background-color: #FF00FF; <br/>
+			}
+		</p>
+		<p>以下的 HTML 碼，</p>
+		<p style="background-color: #E6E6E6;">
+			&lt;div id="redblock"&gt;&lt;/div&gt; 
+			&lt;div id="pinkblock"&gt;&lt;/div&gt;
+		</p>
+		<p>會顯示出，</p>
+		<p>
+			<iframe src="z-index.html"></iframe>
+		</p>
+		<p>從以上可見，粉紅色方塊 (pinkblock) 的 z-index 值 (2) 比紅色方塊 (redblock) 的 z-index 值 (1) 高，因此粉紅色方塊在上面。</p>
+		<p align="center">下一頁：<a href="http://www.1keydata.com/css-tutorial/tw/position.php">CSS位置</a></p>
+			<br/>
+			<br/>
+	</div>
+</body>
+</html>
